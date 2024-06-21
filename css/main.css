@@ -21,37 +21,59 @@ body {
 }
 
 .text {
-  position: absolute; /* Position it absolutely */
-  top: 40px; /* Adjust as necessary to place the text above the flowers */
-  left: 50%; /* Center the text horizontally */
-  transform: translateX(-50%); /* Center the text horizontally */
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   background: 50% 100% / 50% 50% no-repeat
-              radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+              radial-gradient(ellipse at bottom, #23f0ff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-size: 3em;
-  font-family: "Source Sans Pro", sans-serif;
-  z-index: 10; /* Ensure it appears above other elements */
-  animation: reveal 3000ms ease-in-out forwards 200ms,
+  font-family: cursive;
+  z-index: 10;
+  opacity: 0;
+  animation: reveal 3000ms ease-in-out forwards 1000ms,
              glow 2500ms linear infinite 2000ms;
 }
 
+@media (max-width: 500px) {
+  .text {
+    top: 60px;
+  }
+}
+
+@media (max-width: 450px) {
+  .text {
+    top: 100px;
+  }
+}
+
+
 @keyframes reveal {
+  0% {
+      opacity: 0;
+  }
   80% {
       letter-spacing: 8px;
   }
   100% {
+      opacity: 1;
       background-size: 300% 300%;
   }
 }
 
 @keyframes glow {
+  0%, 100% {
+      text-shadow: none;
+  }
   40% {
-      text-shadow: 0 0 8px #fff;
+      text-shadow: 0 0 8px #23f0ff;
   }
 }
+
 
 .night {
   position: fixed;
@@ -1351,7 +1373,7 @@ body {
 .container * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
-}/*# sourceMappingURL=main.css.map */
+
 
 @keyframes gradient {
   0% {
