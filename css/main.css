@@ -32,7 +32,7 @@ body {
   background-clip: text;
   color: transparent;
   font-size: 3em;
-  font-family: cursive;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   z-index: 10;
   opacity: 0;
   animation: reveal 3000ms ease-in-out forwards 1000ms,
